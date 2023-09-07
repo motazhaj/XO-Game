@@ -15,34 +15,61 @@
   </head>
   <body>
     <header id="welcome-screen">
-      <h1>Welcome to NEON XO</h1>
-      <button>Set your names</button>
-      <button>Start Game</button>
+      <section id="controls">
+        <h1>Welcome to <span>NEON XO</span></h1>
+        <button id="start-game">Start New Game</button>
+        <button id="show-names-overlay">Edit Names</button>
+      </section>
 
-      <div id="name-overlay">
+      <aside id="set-names-overlay">
+        <p>Set Names:</p>
         <div>
-          <p>Enter play name:</p>
-          <input type="text" />
+          <form>
+            <label for="player1Name">player1</label>
+            <input type="text" name="player1Name" id="player1Name" />
+            <label for="player2Name">player2</label>
+            <input type="text" name="player2Name" id="player2Name" />
+          </form>
         </div>
         <div>
-            <button>Set</button>
-            <button>Cancel</button>
+          <button type="button">Cancel</button>
+          <button type="submit">Set</button>
         </div>
-      </div>
+      </aside>
     </header>
 
-    <section>
-      <ul>
+    <section id="hud">
+      <div>
+        <li>X</li>
+        <li>Player 1:</li>
+        <li>0</li>
+      </div>
+      <div>
+        Tie:
+        <li>0</li>
+      </div>
+      <div>
+        <li>O</li>
+        <li>Plauer 2:</li>
+        <li>0</li>
+      </div>
+    </section>
+
+    <section id="xo-game">
+      <p>its your turn<span>Player</span></p>
+      <ol>
         <li>X</li>
         <li>O</li>
         <li>X</li>
+
         <li>O</li>
         <li>X</li>
         <li>O</li>
+
         <li>X</li>
         <li>O</li>
         <li>X</li>
-      </ul>
+      </ol>
     </section>
   </body>
 </html>
