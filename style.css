@@ -10,15 +10,25 @@ html {
   color: white;
   box-sizing: inherit;
   margin: 0;
-  padding: 10px;
+  padding: 4px;
   font-family: "Tilt Neon", sans-serif;
   text-shadow: 0 0 0.5em currentColor;
   user-select: none;
-
 }
 
 body {
   text-align: center;
+}
+
+#controls {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#controls button{
+    width: 200px;
+    margin: 5px;
 }
 
 h1 {
@@ -30,6 +40,7 @@ h1 span {
 }
 
 button {
+  display: block;
   background-color: rgba(0, 0, 0, 0);
   margin: 0 12px;
   font-size: 20px;
@@ -38,8 +49,13 @@ button {
   box-shadow: 0 0 0.5em currentColor;
 }
 
-#name-overlay {
+#show-names-overlay {
+  scale: 0.8;
+}
+
+#set-names-overlay {
   display: none;
+  z-index: 1;
   background-color: rgb(30, 30, 72);
   font-size: 30px;
   position: fixed;
@@ -49,27 +65,38 @@ button {
   justify-content: center;
   align-items: center;
   width: 600px;
-  height: 250px;
+  height: 350px;
   border: 2px solid white;
   border-radius: 18px;
 }
 
-#name-overlay div {
-  height: 50%;
+#set-names-overlay div {
+  height: 40%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
 }
 
-#name-overlay input {
+form {
+  width: 50%;
+  height: 50%;
+  display: grid;
+  justify-content: space-around;
+  align-items: center;
+  grid-template-rows: repeat(2, 30px);
+  grid-template-columns: repeat(2, 80%);
+  gap: 10px;
+}
+
+#set-names-overlay input {
   background-color: rgba(0, 0, 0, 0);
   border: 2px solid white;
   border-radius: 10px;
-  width: 50%;
+  width: 100%;
   height: 30px;
   font-size: 26px;
 }
-#name-overlay button {
+#set-names-overlay button {
   height: 36px;
   width: 30%;
   font-size: 26px;
@@ -81,11 +108,30 @@ button {
   align-items: center;
 }
 
-ul {
+#hud {
+  width: 380px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+#hud div {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  padding: 0;
+}
+
+#hud div li {
+  margin: 0;
+  padding: 5px;
+}
+
+ol {
   margin: auto;
   margin-bottom: 200px;
-  width: 450px;
-  height: 450px;
+  width: 380px;
+  height: 380px;
   list-style-type: none;
   display: grid;
   grid-template-rows: repeat(3, 1fr);
@@ -93,11 +139,11 @@ ul {
   gap: 10px;
   position: relative;
 }
-ul::before {
+ol::before {
   content: "";
   position: absolute;
   background-color: rgb(255, 255, 255);
-  top: 90%;
+  top: 80%;
   left: 0;
   width: 100%;
   height: 50%;
@@ -107,12 +153,12 @@ ul::before {
   opacity: 0.5;
 }
 
-ui::after {
+ol::after {
   content: "";
   opacity: 0.5;
 }
 
-ul li {
+ol li {
   border: 3px solid white;
   border-radius: 16px;
   display: flex;
@@ -123,19 +169,21 @@ ul li {
   cursor: pointer;
 }
 
-ul li:hover,button:hover {
-  background-color: rgb(66, 198, 255);
-  border-color: rgb(66, 198, 255);
-  box-shadow: 0 0 100px rgb(66, 198, 255);
+ol li:hover,
+button:hover {
+  background-color: white;
+  border-color: white;
+  box-shadow: 0 0 100px white;
+  color: black;
   transition: 150ms;
   scale: 1.1;
-
 }
 
-ul li:active,button:active {
-  background-color: rgb(250, 113, 255);
-  border-color: rgb(250, 113, 255);
-  box-shadow: 0 0 100px rgb(250, 113, 255);
+ol li:active,
+button:active {
+  background-color: rgb(244, 176, 255);
+  border-color: rgb(244, 176, 255);
+  box-shadow: 0 0 100px rgb(244, 176, 255);
   transition: 80ms;
-  scale: .9;
+  scale: 0.9;
 }
