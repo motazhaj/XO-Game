@@ -10,16 +10,23 @@ html {
   color: white;
   box-sizing: inherit;
   margin: 0;
-  padding: 16px;
+  padding: 10px;
   font-family: "Tilt Neon", sans-serif;
+  text-shadow: 0 0 0.5em currentColor;
+  user-select: none;
+
 }
 
 body {
   text-align: center;
 }
 
-h1{
-    font-size: 40px;
+h1 {
+  font-size: 35px;
+}
+h1 span {
+  font-size: 40px;
+  color: rgb(66, 198, 255);
 }
 
 button {
@@ -28,14 +35,7 @@ button {
   font-size: 20px;
   border: 3px solid white;
   border-radius: 16px;
-}
-
-button:hover {
-  background-color: rgba(66, 198, 255, 0.666);
-}
-
-button:active {
-  background-color: rgba(235, 105, 240, 0.938);
+  box-shadow: 0 0 0.5em currentColor;
 }
 
 #name-overlay {
@@ -83,6 +83,7 @@ button:active {
 
 ul {
   margin: auto;
+  margin-bottom: 200px;
   width: 450px;
   height: 450px;
   list-style-type: none;
@@ -90,6 +91,25 @@ ul {
   grid-template-rows: repeat(3, 1fr);
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
+  position: relative;
+}
+ul::before {
+  content: "";
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  top: 90%;
+  left: 0;
+  width: 100%;
+  height: 50%;
+
+  transform: perspective(1em) rotateX(5deg) scale(1, 0.25);
+  filter: blur(8em);
+  opacity: 0.5;
+}
+
+ui::after {
+  content: "";
+  opacity: 0.5;
 }
 
 ul li {
@@ -99,4 +119,23 @@ ul li {
   align-items: center;
   justify-content: center;
   font-size: 80px;
+  box-shadow: 0 0 0.1em currentColor;
+  cursor: pointer;
+}
+
+ul li:hover,button:hover {
+  background-color: rgb(66, 198, 255);
+  border-color: rgb(66, 198, 255);
+  box-shadow: 0 0 100px rgb(66, 198, 255);
+  transition: 150ms;
+  scale: 1.1;
+
+}
+
+ul li:active,button:active {
+  background-color: rgb(250, 113, 255);
+  border-color: rgb(250, 113, 255);
+  box-shadow: 0 0 100px rgb(250, 113, 255);
+  transition: 80ms;
+  scale: .9;
 }
