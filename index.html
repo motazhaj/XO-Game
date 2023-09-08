@@ -9,7 +9,10 @@
       href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/Styles/style.css" />
+    <link rel="stylesheet" href="/Styles/names-overlay.css" />
+    <link rel="stylesheet" href="/Styles/xo-game.css" />
+
     <script src="app.js"></script>
     <title>Neon XO</title>
   </head>
@@ -26,14 +29,14 @@
         <div>
           <form>
             <label for="player1Name">player1</label>
-            <input type="text" name="player1Name" id="player1Name" />
+            <input type="text" name="player1NameInput" id="player1NameLabel" />
             <label for="player2Name">player2</label>
-            <input type="text" name="player2Name" id="player2Name" />
+            <input type="text" name="player2Name" id="player2NameLabel" />
           </form>
         </div>
         <div>
-          <button type="button">Cancel</button>
-          <button type="submit">Set</button>
+          <button type="button" id="cancel-button">Cancel</button>
+          <button type="submit" id="set-names-button">Set</button>
         </div>
       </aside>
     </header>
@@ -41,7 +44,7 @@
     <section id="hud">
       <div>
         <li>X</li>
-        <li>Player 1:</li>
+        <li id="player1Name">Player 1:</li>
         <li>0</li>
       </div>
       <div>
@@ -50,7 +53,7 @@
       </div>
       <div>
         <li>O</li>
-        <li>Plauer 2:</li>
+        <li id="player2Name">Plauer 2:</li>
         <li>0</li>
       </div>
     </section>
