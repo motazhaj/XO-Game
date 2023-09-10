@@ -30,18 +30,30 @@
       <div id="backdrop"></div>
       <aside id="set-names-overlay">
         <p>Set Names:</p>
-        <div>
-          <form>
-            <label for="player1Name">X name</label>
-            <input type="text" name="player1NameInput" id="player1NameInput" />
-            <label for="player2Name">Y name</label>
-            <input type="text" name="player2NameInput" id="player2NameInput" />
-          </form>
-        </div>
-        <div>
-          <button type="button" id="cancel-button">Cancel</button>
-          <button type="submit" id="set-names-button">Set</button>
-        </div>
+        <form>
+          <div id="names-input">
+            <div>
+              <label for="player1Name">X name:</label>
+              <input
+                type="text"
+                name="player1Name"
+                id="player1NameInput"
+              />
+            </div>
+            <div>
+              <label for="player2Name">Y name:</label>
+              <input
+                type="text"
+                name="player2Name"
+                id="player2NameInput"
+              />
+            </div>
+          </div>
+          <div>
+            <button type="button" id="cancel-button">Cancel</button>
+            <button type="submit">Set</button>
+          </div>
+        </form>
       </aside>
     </header>
 

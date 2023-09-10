@@ -19,34 +19,36 @@
   border-radius: 18px;
 }
 
-#set-names-overlay div {
+#set-names-overlay form div {
   height: 40%;
   display: flex;
+  width: 95%;
+  margin: 4px auto;
   justify-content: space-evenly;
   align-items: center;
 }
 
-form {
-  width: 50%;
+#names-input {
+  width: 100%;
   height: 50%;
-  display: grid;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  grid-template-rows: repeat(2, 30px);
-  grid-template-columns: repeat(2, 80%);
-  gap: 10px;
 }
 
 #set-names-overlay input {
   background-color: rgba(0, 0, 0, 0);
   border: 2px solid white;
   border-radius: 10px;
-  width: 100%;
+  width: 50%;
   height: 2rem;
   font-size: 1.5rem;
 }
 #set-names-overlay button {
-  height: 2rem;
+  height: 2.5rem;
+  margin-top: 45px;
   width: 30%;
   font-size: 1.5rem;
   border: 2px solid white;
