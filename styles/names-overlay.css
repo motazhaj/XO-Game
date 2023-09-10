@@ -5,7 +5,7 @@
 #set-names-overlay {
   display: none;
   z-index: 1;
-  background-color: rgb(30, 30, 72);
+  background-color: rgb(15, 15, 37);
   font-size: 2rem;
   position: fixed;
   top: 50%;
