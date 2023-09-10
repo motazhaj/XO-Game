@@ -13,7 +13,10 @@
     <link rel="stylesheet" href="/Styles/names-overlay.css" />
     <link rel="stylesheet" href="/Styles/xo-game.css" />
 
-    <script src="app.js"></script>
+    <script src="scripts/config.js" defer></script>
+    <script src="scripts/game.js" defer></script>
+    <script src="scripts/app.js" defer></script>
+
     <title>Neon XO</title>
   </head>
   <body>
@@ -28,10 +31,10 @@
         <p>Set Names:</p>
         <div>
           <form>
-            <label for="player1Name">player1</label>
-            <input type="text" name="player1NameInput" id="player1NameLabel" />
-            <label for="player2Name">player2</label>
-            <input type="text" name="player2Name" id="player2NameLabel" />
+            <label for="player1Name">X name</label>
+            <input type="text" name="player1NameInput" id="player1NameInput" />
+            <label for="player2Name">Y name</label>
+            <input type="text" name="player2NameInput" id="player2NameInput" />
           </form>
         </div>
         <div>
@@ -44,7 +47,7 @@
     <section id="hud">
       <div>
         <li>X</li>
-        <li id="player1Name">Player 1:</li>
+        <li id="player1Name">Player 1</li>
         <li>0</li>
       </div>
       <div>
@@ -53,7 +56,7 @@
       </div>
       <div>
         <li>O</li>
-        <li id="player2Name">Plauer 2:</li>
+        <li id="player2Name">Plauer 2</li>
         <li>0</li>
       </div>
     </section>
