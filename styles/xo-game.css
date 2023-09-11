@@ -93,20 +93,32 @@ button:active {
   cursor: pointer;
 }
 
+#active-player{
+  font-size: 1.25rem;
+  color: rgb(244, 176, 255);
+}
+
 #game-over {
   display: none;
+  padding: 50px 0 100px 0;
+  flex-direction: column;
+  justify-content: space-between;
   z-index: 1;
-  padding: 3rem;
   background-color: rgb(15, 15, 37);
   font-size: 2rem;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  justify-content: center;
   align-items: center;
   width: 600px;
   height: 450px;
   border: 2px solid white;
   border-radius: 18px;
+}
+
+#game-over button {
+  width: 50%;
+  font-size: 1.5rem;
+  height: 4rem;
 }
