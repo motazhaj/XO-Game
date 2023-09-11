@@ -23,7 +23,7 @@
     <header id="welcome-screen">
       <section id="controls">
         <h1>Welcome to <span>NEON XO</span></h1>
-        <button id="start-game">Start New Game</button>
+        <button class="start-game">Start New Game</button>
         <button id="show-names-overlay">Edit Names</button>
       </section>
 
@@ -34,19 +34,11 @@
           <div id="names-input">
             <div>
               <label for="player1Name">X name:</label>
-              <input
-                type="text"
-                name="player1Name"
-                id="player1NameInput"
-              />
+              <input type="text" name="player1Name" id="player1NameInput" />
             </div>
             <div>
               <label for="player2Name">Y name:</label>
-              <input
-                type="text"
-                name="player2Name"
-                id="player2NameInput"
-              />
+              <input type="text" name="player2Name" id="player2NameInput" />
             </div>
           </div>
           <div>
@@ -55,39 +47,45 @@
           </div>
         </form>
       </aside>
+
+      <aside id="game-over">
+        <h1>Game Over</h1>
+        <h2 id="winner-name">Player wins</h2>
+        <button class="start-game">Start New Game</button>
+      </aside>
     </header>
 
     <section id="hud">
       <div>
         <li>X</li>
         <li id="player1Name">Player 1</li>
-        <li>0</li>
+        <li id="player1-score">0</li>
       </div>
       <div>
         Tie:
-        <li>0</li>
+        <li id="game-tie">0</li>
       </div>
       <div>
         <li>O</li>
-        <li id="player2Name">Plauer 2</li>
-        <li>0</li>
+        <li id="player2Name">Player 2</li>
+        <li id="player2-score">0</li>
       </div>
     </section>
 
     <section id="xo-game">
-      <p>its your turn<span>Player</span></p>
-      <ol>
-        <li>X</li>
-        <li>O</li>
-        <li>X</li>
+      <p>its your turn:<span id="active-player">Player</span></p>
+      <ol id="game-board">
+        <li data-col="1" data-row="1"></li>
+        <li data-col="2" data-row="1"></li>
+        <li data-col="3" data-row="1"></li>
 
-        <li>O</li>
-        <li>X</li>
-        <li>O</li>
+        <li data-col="1" data-row="2"></li>
+        <li data-col="2" data-row="2"></li>
+        <li data-col="3" data-row="2"></li>
 
-        <li>X</li>
-        <li>O</li>
-        <li>X</li>
+        <li data-col="1" data-row="3"></li>
+        <li data-col="2" data-row="3"></li>
+        <li data-col="3" data-row="3"></li>
       </ol>
     </section>
   </body>
