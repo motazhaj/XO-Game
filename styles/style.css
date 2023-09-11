@@ -62,7 +62,7 @@ button {
 }
 
 @media (max-width: 768px) {
-  #header{
+  #header {
     margin-top: 100px;
   }
 }
