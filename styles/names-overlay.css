@@ -58,3 +58,9 @@
   margin-left: 1rem;
   align-items: center;
 }
+
+@media (max-width: 768px) {
+  #set-names-overlay{
+    width: 90%;
+  }
+}
