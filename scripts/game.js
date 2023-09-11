@@ -19,9 +19,11 @@ function selectGameGrid(event) {
     selectedBox.textContent = "O";
   }
 
-  switchPlayer();
   selectedBox.classList.add("disabled");
-  checkGameOver();
+  console.log("Winnder is: " + checkGameOver());
+  
+  currentRound++;
+  switchPlayer();
 }
 
 function switchPlayer() {
@@ -50,7 +52,6 @@ function checkGameOver() {
       gameData[i][0] === gameData[i][1] &&
       gameData[i][1] === gameData[i][2]
     ) {
-      console.log("Game Over you won " + gameData[i][0]);
       return gameData[i][0];
     }
   }
@@ -62,7 +63,6 @@ function checkGameOver() {
       gameData[0][i] === gameData[1][i] &&
       gameData[1][i] === gameData[2][i]
     ) {
-      console.log("Game Over you won " + gameData[0][i]);
       return gameData[0][i];
     }
   }
@@ -73,7 +73,6 @@ function checkGameOver() {
       gameData[0][0] === gameData[1][1] &&
       gameData[1][1] === gameData[2][2]
     ) {
-      console.log("Game Over you won " + gameData[0][0]);
       return gameData[0][0];
     }
   }
@@ -85,7 +84,6 @@ function checkGameOver() {
       gameData[0][2] === gameData[1][1] &&
       gameData[1][1] === gameData[2][0]
     ) {
-      console.log("Game Over you won " + gameData[0][2]);
       return gameData[0][2];
     }
   }
@@ -99,7 +97,6 @@ function checkGameOver() {
       gameData[i][0] === gameData[i][1] &&
       gameData[i][1] === gameData[i][2]
     ) {
-      console.log("Game Over you won " + gameData[i][0]);
       return gameData[i][0];
     }
   }
@@ -111,7 +108,6 @@ function checkGameOver() {
       gameData[0][i] === gameData[1][i] &&
       gameData[1][i] === gameData[2][i]
     ) {
-      console.log("Game Over you won " + gameData[0][i]);
       return gameData[0][i];
     }
   }
@@ -122,7 +118,6 @@ function checkGameOver() {
       gameData[0][0] === gameData[1][1] &&
       gameData[1][1] === gameData[2][2]
     ) {
-      console.log("Game Over you won " + gameData[0][0]);
       return gameData[0][0];
     }
   }
@@ -134,8 +129,12 @@ function checkGameOver() {
       gameData[0][2] === gameData[1][1] &&
       gameData[1][1] === gameData[2][0]
     ) {
-      console.log("Game Over you won " + gameData[0][2]);
       return gameData[0][2];
     }
   }
+
+  if (currentRound === 9) {
+    return -1;
+  }
+  return 0;
 }

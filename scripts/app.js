@@ -5,6 +5,7 @@ const gameData = [
   [0, 0, 0],
   [0, 0, 0],
 ];
+let currentRound = 1;
 
 const startGameButton = document.getElementById("start-game");
 const showNamesOverlayButton = document.getElementById("show-names-overlay");
