@@ -1,13 +1,16 @@
 let activePlayer = 0;
+let player1Score = 0;
+let player2Score = 0;
+let gameTie = 0;
 
-const gameData = [
+let gameData = [
   [0, 0, 0],
   [0, 0, 0],
   [0, 0, 0],
 ];
 let currentRound = 1;
 
-const startGameButton = document.getElementById("start-game");
+const startGameButton = document.querySelectorAll(".start-game");
 const showNamesOverlayButton = document.getElementById("show-names-overlay");
 const namesOverlay = document.getElementById("set-names-overlay");
 const backdropElement = document.getElementById("backdrop");
@@ -21,11 +24,17 @@ const cancelSetNamesButton = document.getElementById("cancel-button");
 
 const activePlayerElement = document.getElementById("active-player");
 const gameGridElement = document.getElementById("game-board");
+const gameOverOverlay = document.getElementById("game-over");
+const winnerName = document.getElementById("winner-name");
 
 showNamesOverlayButton.addEventListener("click", openNamesOverlay);
 cancelSetNamesButton.addEventListener("click", closeNamesOverlay);
 backdropElement.addEventListener("click", closeNamesOverlay);
 formElement.addEventListener("submit", setNames);
 
-startGameButton.addEventListener("click", startNewGame);
+startGameButton.forEach(function (startButton) {
+  startButton.addEventListener("click", startNewGame);
+});
+
+// startGameButton.addEventListener("click", startNewGame);
 gameGridElement.addEventListener("click", selectGameGrid);

@@ -20,8 +20,11 @@ function selectGameGrid(event) {
   }
 
   selectedBox.classList.add("disabled");
-  console.log("Winnder is: " + checkGameOver());
-  
+  const winnerId = checkGameOver();
+  if (winnerId !== 0) {
+    gameOver(winnerId);
+  }
+
   currentRound++;
   switchPlayer();
 }
@@ -37,6 +40,14 @@ function switchPlayer() {
 }
 
 function startNewGame() {
+  backdropElement.style.display = "none";
+  gameOverOverlay.style.display = "none";
+  gameData = [
+    [0, 0, 0],
+    [0, 0, 0],
+    [0, 0, 0],
+  ];
+  currentRound = 1;
   const selectedElements = document.querySelectorAll("#game-board li");
   for (const selectedElement of selectedElements) {
     selectedElement.innerHTML = "";
@@ -138,3 +149,20 @@ function checkGameOver() {
   }
   return 0;
 }
+
+function gameOver(winnerId) {
+  backdropElement.style.display = "block";
+  gameOverOverlay.style.display = "flex";
+
+  if (winnerId === 1) {
+    winnerName.innerHTML = player1Name.innerHTML + " Wins";
+    player1Score++;
+  } else if (winnerId === 2) {
+    winnerName.innerHTML = player2Name.innerHTML + " Wins";
+    player2Score++;
+  } else {
+    winnerName.innerHTML = "It's a Draw";
+    gameTie++;
+  }
+}
+
