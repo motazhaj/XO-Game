@@ -27,6 +27,10 @@ const gameGridElement = document.getElementById("game-board");
 const gameOverOverlay = document.getElementById("game-over");
 const winnerName = document.getElementById("winner-name");
 
+const player1ScoreElement = document.getElementById("player1-score");
+const player2ScoreElement = document.getElementById("player2-score");
+const gameTieElement = document.getElementById("game-tie");
+
 showNamesOverlayButton.addEventListener("click", openNamesOverlay);
 cancelSetNamesButton.addEventListener("click", closeNamesOverlay);
 backdropElement.addEventListener("click", closeNamesOverlay);

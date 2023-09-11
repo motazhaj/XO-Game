@@ -23,6 +23,7 @@ function selectGameGrid(event) {
   const winnerId = checkGameOver();
   if (winnerId !== 0) {
     gameOver(winnerId);
+    updateScore();
   }
 
   currentRound++;
@@ -166,3 +167,12 @@ function gameOver(winnerId) {
   }
 }
 
+function updateScore() {
+  console.log(player1Score);
+  console.log(player2Score);
+  console.log(gameTie);
+
+  player1ScoreElement.textContent = player1Score;
+  player2ScoreElement.textContent = player2Score;
+  gameTieElement.textContent = gameTie;
+}
